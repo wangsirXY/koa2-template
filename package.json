@@ -1,0 +1,53 @@
+{
+  "name": "koa2-template",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "node ./dist/index.js",
+    "dev": "nodemon --watch",
+    "build": "tsc",
+    "prepare": "husky install",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/wangsirXY/koa2-template.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/wangsirXY/koa2-template/issues"
+  },
+  "homepage": "https://github.com/wangsirXY/koa2-template#readme",
+  "dependencies": {
+    "@commitlint/cli": "12.1.4",
+    "@types/koa": "^2.13.5",
+    "@types/koa-router": "^7.4.4",
+    "@types/node": "^18.7.14",
+    "@types/validator": "^13.7.6",
+    "cz-customizable": "6.3.0",
+    "dotenv": "^16.0.2",
+    "husky": "7.0.1",
+    "koa": "^2.13.4",
+    "koa-bodyparser": "^4.3.0",
+    "koa-logger": "^3.2.1",
+    "koa-router": "^12.0.0",
+    "koa-router-ts": "^3.0.0",
+    "koa-static": "^5.0.0",
+    "koa2-cors": "^2.0.6",
+    "moment": "^2.29.4",
+    "mysql2": "^2.3.3",
+    "nodemon": "^2.0.19",
+    "reflect-metadata": "^0.1.13",
+    "sequelize": "^6.21.4",
+    "sequelize-typescript": "^2.1.3",
+    "ts-node": "^10.9.1",
+    "typescript": "^4.8.2"
+  },
+  "config": {
+    "commitizen": {
+      "path": "node_modules/cz-customizable"
+    }
+  }
+}
