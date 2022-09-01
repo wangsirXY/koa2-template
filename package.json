@@ -22,6 +22,7 @@
   "homepage": "https://github.com/wangsirXY/koa2-template#readme",
   "dependencies": {
     "@commitlint/cli": "12.1.4",
+    "@commitlint/config-conventional": "^17.1.0",
     "@types/koa": "^2.13.5",
     "@types/koa-router": "^7.4.4",
     "@types/node": "^18.7.14",
@@ -29,6 +30,7 @@
     "cz-customizable": "6.3.0",
     "dotenv": "^16.0.2",
     "husky": "7.0.1",
+    "jsonwebtoken": "^8.5.1",
     "koa": "^2.13.4",
     "koa-bodyparser": "^4.3.0",
     "koa-logger": "^3.2.1",
@@ -37,7 +39,7 @@
     "koa-static": "^5.0.0",
     "koa2-cors": "^2.0.6",
     "moment": "^2.29.4",
-    "mysql2": "^2.3.3",
+    "mysql": "^2.18.1",
     "nodemon": "^2.0.19",
     "reflect-metadata": "^0.1.13",
     "sequelize": "^6.21.4",
@@ -49,5 +51,11 @@
     "commitizen": {
       "path": "node_modules/cz-customizable"
     }
+  },
+  "devDependencies": {
+    "@types/koa-bodyparser": "^4.3.7",
+    "@types/koa-logger": "^3.1.2",
+    "@types/koa-static": "^4.0.2",
+    "@types/koa2-cors": "^2.0.2"
   }
 }
