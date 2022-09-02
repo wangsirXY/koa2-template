@@ -59,6 +59,8 @@ default/
 
 *如果后台中有依赖外部云上资源，需要在下方进行描述* 
 
+> 运行项目需要使用 `yarn` 安装项目依赖。
+
 - Git提交规范
 
   > 需要全局安装 [`commitizen`](https://www.npmjs.com/package/commitizen) 依赖包
