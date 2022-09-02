@@ -7,6 +7,9 @@ import bodyParser from "koa-bodyparser"; // post请求
 import path from "path";
 import cors from "koa2-cors"; // 跨域处理
 
+// 打印作者信息
+const log = require('./static/log');
+
 // 启动dotenv
 require("dotenv").config();
 
@@ -40,4 +43,8 @@ app.use(cors());
 
 
 const PORT = process.env.PORT || 3000;
-app.listen(PORT);
+app.listen(PORT, () => {
+  log.map((item: string) => console.log(item));
+  
+  console.log(`Server is running on http://127.0.0.1:${PORT}`);
+});

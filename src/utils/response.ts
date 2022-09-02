@@ -1,4 +1,10 @@
-// 定义请求响应接口
+/**
+ * 定义请求响应接口
+ *  status:  响应状态(ok /error)
+ *  message: 提示信息
+ *  data:    响应成功时返回的数据
+ *  code:    响应失败时返回的错误类型
+ */
 export interface IResponse {
   status: string;
   message: string;
