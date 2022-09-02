@@ -26,7 +26,10 @@ app.use(bodyParser());
 app.use(logger);
 app.use(statics(path.join(__dirname, staticPath)));
 
-// 实例化路由
+/**
+ *  实例化路由
+ *    将路由文件夹下的所有路由都实例化
+ */
 const router = loadControllers(path.join(__dirname, "routers"), {
   recurse: true,
 });

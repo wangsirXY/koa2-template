@@ -1,12 +1,25 @@
 const { query } = require('../db/query');
 
+
 export default class UserDetails {
-  /**
-   * @param ctx 
-   * @returns 查询所有用户
+  /** 查询所有用户信息
+   * @returns 当前已注册的所有用户信息
    */
   async getUserList () {
     return await query(`select * from users;`);
+  }
+
+  /** 查询单个用户信息
+   * @param mobile 手机号
+   * @returns 所查询的用户信息
+   */
+  async getUser (mobile: string) {
+    return await query(`
+      select *
+        from users
+      where
+        mobile='${mobile}'
+    ;`);
   }
 
   /**
@@ -20,7 +33,7 @@ export default class UserDetails {
       select * 
         from users
       where
-        cname='${mobile}' and cname='${password}'
+        mobile='${mobile}' and password='${password}'
     ;`);
   }
 

@@ -24,7 +24,10 @@ export default class {
     ctx.body = result;
   }
 
-  // 用户登录
+  /**
+   * 用户登录
+   * @param ctx 
+   */
   @Post("/login")
   async login(ctx: any) {
     // Post 请求参数

@@ -1,4 +1,4 @@
-// 定义接口
+// 定义请求响应接口
 export interface IResponse {
   status: string;
   message: string;
