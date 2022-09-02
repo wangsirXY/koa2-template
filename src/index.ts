@@ -41,7 +41,7 @@ app.use(router.routes()).use(router.allowedMethods());
 // 设置跨域
 app.use(cors());
 
-
+// 端口及监听
 const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {
   log.map((item: string) => console.log(item));
