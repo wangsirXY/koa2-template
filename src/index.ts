@@ -8,7 +8,7 @@ import path from "path";
 import cors from "koa2-cors"; // 跨域处理
 
 // 打印作者信息
-const log = require('./static/log');
+const banner_ads = require('./utils/bannerAds');
 // token校验
 const checkToken = require("./utils/checkToken");
 
@@ -47,7 +47,7 @@ app.use(cors());
 // 端口及监听
 const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {
-  log.map((item: string) => console.log(item));
+  banner_ads.map((item: string) => console.log(item));
   
   console.log(`Server is running on http://127.0.0.1:${PORT}`);
 });
