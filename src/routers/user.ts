@@ -33,7 +33,6 @@ export default class {
     // Post 请求参数
     const { mobile="", password="" } = ctx.request.body;
 
-
     ctx.body = await service.login(ctx, mobile, password);
   }
 

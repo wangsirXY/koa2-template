@@ -34,7 +34,7 @@ app.use(statics(path.join(__dirname, staticPath)));
  *    将路由文件夹下的所有路由都实例化
  */
 const router = loadControllers(path.join(__dirname, "routers"), {
-  recurse: true,
+  recurse: true,  // 是否递归
 });
 
 app.use(router.routes()).use(router.allowedMethods());
