@@ -8,7 +8,7 @@ import UserService from "../controllers/user";
 const service = new UserService();
 
 // 构建路由
-@Controller("/user")
+@Controller("/users")
 export default class {
   /**
    * 获取所有用户列表

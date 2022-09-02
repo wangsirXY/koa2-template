@@ -56,7 +56,7 @@ export default class UserService {
        * 生成Token
        * jwt.sign({ token数据 }, '编码私钥', { expiresIn: '有效期' })
        */
-      result[0].token = jwt.sign({ mobile }, 'Coder-GuAn', { expiresIn: '2d' })  // d: 天, h: 小时
+      result[0].token = jwt.sign({ mobile }, process.env.TOKEN_KEY, { expiresIn: '2d' })  // d: 天, h: 小时
 
       return new SuccessResponse(result[0], "登录成功");
     } catch (error) {

@@ -9,6 +9,8 @@ import cors from "koa2-cors"; // 跨域处理
 
 // 打印作者信息
 const log = require('./static/log');
+// token校验
+const checkToken = require("./utils/checkToken");
 
 // 启动dotenv
 require("dotenv").config();
@@ -28,6 +30,7 @@ const app = new Koa();
 app.use(bodyParser());
 app.use(logger);
 app.use(statics(path.join(__dirname, staticPath)));
+app.use(checkToken);
 
 /**
  *  实例化路由
