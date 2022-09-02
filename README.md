@@ -18,14 +18,14 @@ default/
 ├── src
 │   └── controllers		# 业务层逻辑
 │   └── db						# 数据库配置
-│				└── config.ts		# 配置不同开发环境的数据库
-│				└── index.ts		# 默认数据库配置
-│				└── query.ts		# 数据库连接
+│			└── config.ts		# 配置不同开发环境的数据库
+│			└── index.ts		# 默认数据库配置
+│			└── query.ts		# 数据库连接
 │   └── models				# 操作数据库模型
 │   └── routers				# 路由
 │   └── static				# 静态资源
 │   └── utils					# 工具包
-│				└── response.ts	# 定义请求响应接口
+│			└── response.ts	# 定义请求响应接口
 │   └── index.ts			# 入口文件
 ├── .cz-config.js		# Commit提交类别配置文件
 ├── .env						# 全局参数配置文件
