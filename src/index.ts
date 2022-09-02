@@ -6,6 +6,9 @@ import moment from "moment"; // 时间格式化
 import bodyParser from "koa-bodyparser"; // post请求
 import path from "path";
 import cors from "koa2-cors"; // 跨域处理
+const cmd = require('node-cmd');
+const iconv = require('iconv-lite');   // cmd解码为utf8
+
 
 // 打印作者信息
 const banner_ads = require('./utils/bannerAds');
@@ -48,6 +51,31 @@ app.use(cors());
 const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {
   banner_ads.map((item: string) => console.log(item));
+
+  // 获取当前项目最后修改的时间
+  cmd.run(`dir /TW`,
+    function(err: any, data: any, stderr: any) {
+      
+      // 过滤出文件和目录
+      data = data.split('\r\n').filter((item: string) => {
+        // 去除空格，截取前17位时间，并转码
+        item = iconv.decode(item.trim().slice(0, 17), 'utf8');
+        
+        // 获取所有的目录和文件
+        return `${new Date(item).getTime()}` != "NaN";
+      })
+      
+      data.sort((num1:string, num2:string) => {
+        return new Date(iconv.decode(num2.trim().slice(0, 17), 'utf8')).getTime() - new Date(iconv.decode(num1.trim().slice(0, 17), 'utf8')).getTime();
+      })
+      
+      console.log("项目最后修改时间：" + data[0].slice(0, 17).split("/").join("-").split("  ").join(" "));
+    }
+  );
   
   console.log(`Server is running on http://127.0.0.1:${PORT}`);
+
+  setTimeout(() => {
+    console.log("------------------------------------------------------------------------");
+  }, 500)
 });
