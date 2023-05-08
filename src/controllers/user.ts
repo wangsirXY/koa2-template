@@ -43,15 +43,15 @@ export default class UserService {
   async login(ctx: any, mobile: string, password: string): Promise<IResponse> {
     try {
       // 非空校验
-      if (!mobile || !password) return new ErrorResponse("用户名和密码不能为空", 401);
-      
+      if (!mobile || !password) return new ErrorResponse("用户名和密码不能为空", 202);
+
       let result = await details.login(mobile, password);
-      
+
       // 用户没有注册
       if (!result[0]) {
-        return new ErrorResponse("请输入正确的用户名和密码", 404);
+        return new ErrorResponse("请输入正确的用户名和密码", 204);
       }
-      
+
       /**
        * 生成Token
        * jwt.sign({ token数据 }, '编码私钥', { expiresIn: '有效期' })
@@ -64,5 +64,5 @@ export default class UserService {
     }
   }
 
-  
+
 }

@@ -10,7 +10,7 @@ var pool = mysql.createPool(dbConfig);
 
 //  创建连接   sql：sql语句
 module.exports.query = (sql: string, values: any) => {
- return new Promise(function (resolve, reject) {
+  return new Promise(function (resolve, reject) {
     pool.getConnection(function (err: any, connection: { query: (arg0: string, arg1: any, arg2: (error: any, results: any, fields: any) => void) => void; release: () => void; }) {
       if (err) throw err; // not connected!  没有连接上
 

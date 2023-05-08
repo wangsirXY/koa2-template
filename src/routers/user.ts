@@ -18,7 +18,7 @@ export default class {
   async getUserList(ctx: any) {
     // Get 请求参数
     // const { id } = ctx.params;
-    
+
     const result = await service.getUserList(ctx);
 
     ctx.body = result;
@@ -31,7 +31,7 @@ export default class {
   @Post("/login")
   async login(ctx: any) {
     // Post 请求参数
-    const { mobile="", password="" } = ctx.request.body;
+    const { mobile = "", password = "" } = ctx.request.body;
 
     ctx.body = await service.login(ctx, mobile, password);
   }

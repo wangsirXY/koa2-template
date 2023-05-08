@@ -1,9 +1,6 @@
-/**
- * dev: 开发环境
- * uat: 测试环境
- * prd: 生产环境
- */
+// 数据库配置
 module.exports.config = {
+  // 开发环境
   dev: {
     connectionLimit: 10, // 最大连接数
     port: 3306,
@@ -12,6 +9,7 @@ module.exports.config = {
     password: "123456", // 密码
     database: "local_test", // 数据库名称
   },
+  // 测试环境
   uat: {
     connectionLimit: 10,
     port: 3306,
@@ -20,6 +18,7 @@ module.exports.config = {
     password: "123456",
     database: "local_test",
   },
+  // 生产环境
   prd: {
     connectionLimit: 10,
     port: 3306,

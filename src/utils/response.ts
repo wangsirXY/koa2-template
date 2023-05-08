@@ -1,19 +1,22 @@
+// import {} from ""
+
+import { Status } from "../@types/response";
+
 /**
  * 定义请求响应接口
- *  status:  响应状态(ok /error)
+ *  status:  响应状态码
  *  message: 提示信息
  *  data:    响应成功时返回的数据
- *  code:    响应失败时返回的错误类型
  */
 export interface IResponse {
-  status: string;
+  status: Status;
   message: string;
   getHttpStatusCode(): number;
 }
 
 // 定义类SuccessResponse, 用于处理成功类型
 export class SuccessResponse implements IResponse {
-  status: string;
+  status: Status;
   message: string;
   data: any;
   /** 
@@ -21,7 +24,7 @@ export class SuccessResponse implements IResponse {
    * @param message 提示信息
    */
   constructor(data: any, message: string = "") {
-    this.status = "ok";
+    this.status = 200;
     this.message = message;
     this.data = data;
   }
@@ -36,24 +39,20 @@ export class SuccessResponse implements IResponse {
 
 // 定义类ErrorResponse, 用于处理失败类型
 export class ErrorResponse implements IResponse {
-  status: string;
+  status: Status;
   message: string;
-  code: number;
   /**
    * @param message 提示信息
    * @param code 状态码
    */
-  constructor(message: string, code: number) {
-    this.status = "error";
+  constructor(message: string, status: Status) {
+    this.status = status;
     this.message = message;
-    this.code = code;
   }
-  public getHttpStatusCode(): number {
-    return this.code;
+  public getHttpStatusCode(): Status {
+    return this.status;
   }
 }
-
-
 
 
 

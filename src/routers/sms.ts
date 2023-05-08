@@ -15,12 +15,11 @@ export default class {
    * @param ctx 
    */
   @Post("/sendsms")
-  async sendsms (ctx: any) {
+  async sendsms(ctx: any) {
     // Post 请求参数
-    const { mobile="", type="" } = ctx.request.body;
+    const { mobile = "", type = "" } = ctx.request.body;
 
     ctx.body = await service.sendsms(ctx, mobile, type);
   }
-
 
 }
