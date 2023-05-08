@@ -1,4 +1,8 @@
-// 数据库配置
+/**
+  * @description 数据库配置
+  * @author GuAn
+  * @time 2023-05-08 10:24:02
+  */
 module.exports.config = {
   // 开发环境
   dev: {

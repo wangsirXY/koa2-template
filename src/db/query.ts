@@ -1,3 +1,8 @@
+/**
+  * @description 连接数据库
+  * @author GuAn
+  * @time 2023-05-08 10:25:28
+  */
 var mysql = require('mysql');
 const { config } = require('./config');
 

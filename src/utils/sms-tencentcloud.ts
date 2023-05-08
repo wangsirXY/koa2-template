@@ -1,3 +1,8 @@
+/**
+  * @description 腾讯云SDK封装
+  * @author GuAn
+  * @time 2023-05-08 10:20:16
+  */
 export default class SmsDetails {
   /**
    * 短信发送功能
@@ -67,7 +72,7 @@ export default class SmsDetails {
       /* 短信应用ID: 短信SmsSdkAppId在 [短信控制台] 添加应用后生成的实际SmsSdkAppId，示例如1400006666 */
       SmsSdkAppId: process.env.SmsSdkAppId,
       /* 短信签名内容: 使用 UTF-8 编码，必须填写已审核通过的签名，签名信息可登录 [短信控制台] 查看 */
-      SignName: "孤安小白个人网",
+      SignName: process.env.SignName,
       /* 短信码号扩展号: 默认未开通，如需开通请联系 [sms helper] */
       ExtendCode: "",
       /* 国际/港澳台短信 senderid: 国内短信填空，默认未开通，如需开通请联系 [sms helper] */

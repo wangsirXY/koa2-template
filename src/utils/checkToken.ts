@@ -1,7 +1,17 @@
+/**
+  * @description Token 鉴权
+  * 生成Token:
+  *   jwt.sign({ token数据 }, '编码私钥', { expiresIn: '有效期' });
+  * 解码Token:
+  *   如果token过期：decoded的值为 undefined，err抛出异常 JsonWebTokenError: invalid token
+  *     let token = ctx.request.headers["authorization"];
+  *     await jwt.verify(token.replace("Bearer ", ""), 编码私钥, (err, decoded) => {});
+  * @author GuAn
+  * @time 2023-05-08 10:17:12
+  */
 const jwt = require("jsonwebtoken");
 import { Status } from "../@types/response";
 
-// Token 鉴权
 module.exports = async (ctx: any, next: () => any) => {
   let url = ctx.request.url;
 
@@ -18,10 +28,7 @@ module.exports = async (ctx: any, next: () => any) => {
     let token = ctx.request.headers["authorization"];
 
     try {
-      /** 解码
-       * 如果token过期：decoded的值为 undefined，err抛出异常 JsonWebTokenError: invalid token
-       *   await jwt.verify(token.replace("Bearer ", ""), TOKEN_KEY, (err, decoded) => {})
-       */
+      // 解码
       const decoded = await jwt.verify(token.replace("Bearer ", ""), process.env.TOKEN_KEY);
       const { mobile, iat, exp } = decoded;
       await next();

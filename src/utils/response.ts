@@ -1,5 +1,15 @@
-// import {} from ""
-
+/**
+  * @description Response 请求单例类
+  * 调用示例:
+  *   // 引入自定义响应形式
+  *   import {
+  *     SuccessResponse,
+  *     ErrorResponse,
+  *     IResponse,
+  *   } from "../../utils/response";
+  * @author GuAn
+  * @time 2023-05-08 10:18:08
+  */
 import { Status } from "../@types/response";
 
 /**
@@ -53,14 +63,3 @@ export class ErrorResponse implements IResponse {
     return this.status;
   }
 }
-
-
-
-/**
-  // 引入自定义响应形式
-  import {
-    SuccessResponse,
-    ErrorResponse,
-    IResponse,
-  } from "../../utils/response";
- */
